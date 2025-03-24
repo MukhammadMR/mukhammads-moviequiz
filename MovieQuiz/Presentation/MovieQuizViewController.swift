@@ -13,6 +13,8 @@ final class MovieQuizViewController: UIViewController {
     @IBOutlet private var imageView: UIImageView!
     @IBOutlet private var textLabel: UILabel!
     @IBOutlet private var counterLabel: UILabel!
+    @IBOutlet private var yesButton: UIButton!
+    @IBOutlet private var noButton: UIButton!
     
     // MARK: - Actions
     @IBAction private func yesButtonClicked(_ sender: UIButton) {
@@ -34,6 +36,9 @@ final class MovieQuizViewController: UIViewController {
         imageView.image = step.image
         textLabel.text = step.question
         counterLabel.text = step.questionNumber
+        imageView.layer.borderWidth = 0
+        yesButton.isEnabled = true
+        noButton.isEnabled = true
     }
     
     private func show(quiz result: QuizResultsViewModel) {
@@ -63,7 +68,10 @@ final class MovieQuizViewController: UIViewController {
         }
         imageView.layer.masksToBounds = true
         imageView.layer.borderWidth = 8
-        imageView.layer.borderColor = isCorrect ? UIColor.green.cgColor : UIColor.red.cgColor
+        imageView.layer.borderColor = isCorrect ? UIColor.ypGreen.cgColor : UIColor.ypRed.cgColor
+        yesButton.isEnabled = false
+        noButton.isEnabled = false
+        
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
                 self.showNextQuestionOrResults()
