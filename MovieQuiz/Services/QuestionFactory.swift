@@ -6,7 +6,7 @@
 
 import Foundation
 
-class QuestionFactory: QuestionFactoryProtocol {
+final class QuestionFactory: QuestionFactoryProtocol {
     private let questions: [QuizQuestion] = [
             QuizQuestion(
                 image: "The Godfather",
@@ -50,7 +50,7 @@ class QuestionFactory: QuestionFactoryProtocol {
                 correctAnswer: false)
         ]
     
-    weak var delegate: QuestionFactoryDelegate?
+    weak private var delegate: QuestionFactoryDelegate?
     
     func setup(delegate: QuestionFactoryDelegate) {
         self.delegate = delegate

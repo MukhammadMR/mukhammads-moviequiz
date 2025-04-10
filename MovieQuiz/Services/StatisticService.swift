@@ -41,15 +41,6 @@ final class StatisticService: StatisticServiceProtocol {
         }
     }
     
-    private var correctAnswers: Int {
-            get {
-                storage.integer(forKey: Keys.correctAnswers.rawValue)
-            }
-            set {
-                storage.set(newValue, forKey: Keys.correctAnswers.rawValue)
-            }
-        }
-    
     var totalAccuracy: Double {
         let totalQuestions = gamesCount * 10
         guard totalQuestions > 0 else { return 0 }
@@ -64,6 +55,16 @@ final class StatisticService: StatisticServiceProtocol {
             bestGame = result
         }
     }
+    
+    private var correctAnswers: Int {
+            get {
+                storage.integer(forKey: Keys.correctAnswers.rawValue)
+            }
+            set {
+                storage.set(newValue, forKey: Keys.correctAnswers.rawValue)
+            }
+        }
+    
     
     
 }

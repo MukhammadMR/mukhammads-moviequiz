@@ -1,6 +1,15 @@
 import UIKit
 
 final class MovieQuizViewController: UIViewController, QuestionFactoryDelegate {
+    // MARK: - State
+    private var currentQuestionIndex = 0
+    private var correctAnswers = 0
+    private let questionsAmount: Int = 10
+    private var questionFactory: QuestionFactoryProtocol?
+    private var currentQuestion: QuizQuestion?
+    private let alertPresenter = AlertPresenter()
+    private let statisticService: StatisticServiceProtocol = StatisticService()
+    
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -139,15 +148,4 @@ final class MovieQuizViewController: UIViewController, QuestionFactoryDelegate {
         )
         return questionStep
     }
-    
-    // MARK: - State
-    private var currentQuestionIndex = 0
-    private var correctAnswers = 0
-    
-    private let questionsAmount: Int = 10
-    private var questionFactory: QuestionFactoryProtocol?
-    private var currentQuestion: QuizQuestion?
-    private let alertPresenter = AlertPresenter()
-    private let statisticService: StatisticServiceProtocol = StatisticService()
-    
 }
