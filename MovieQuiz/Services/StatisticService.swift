@@ -57,13 +57,13 @@ final class StatisticService: StatisticServiceProtocol {
     }
     
     private var correctAnswers: Int {
-            get {
-                storage.integer(forKey: Keys.correctAnswers.rawValue)
-            }
-            set {
-                storage.set(newValue, forKey: Keys.correctAnswers.rawValue)
-            }
+        get {
+            storage.integer(forKey: Keys.correctAnswers.rawValue)
         }
+        set {
+            storage.set(newValue, forKey: Keys.correctAnswers.rawValue)
+        }
+    }
     
     
     

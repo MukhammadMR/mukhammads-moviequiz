@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_9" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="YS Display-Medium 2.ttf">
+        <array key="YS Display-Bold.ttf">
+            <string>YSDisplay-Bold</string>
+        </array>
+        <array key="YS Display-Medium.ttf">
             <string>YSDisplay-Medium</string>
         </array>
     </customFonts>
@@ -23,7 +26,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="NS1-gZ-vV5">
-                                <rect key="frame" x="20" y="72" width="400" height="850"/>
+                                <rect key="frame" x="20" y="134" width="400" height="754"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PDB-uy-WgT">
                                         <rect key="frame" x="0.0" y="0.0" width="400" height="23.666666666666668"/>
@@ -55,7 +58,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ORJ-aM-q8n" userLabel="Question Label">
-                                        <rect key="frame" x="0.0" y="458.33333333333337" width="400" height="311.66666666666663"/>
+                                        <rect key="frame" x="0.0" y="458.33333333333343" width="400" height="215.66666666666669"/>
                                         <string key="text">Рейтинг этого фильма
 меньше чем 5?</string>
                                         <fontDescription key="fontDescription" name="YSDisplay-Bold" family="YS Display" pointSize="23"/>
@@ -63,7 +66,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="JCV-eQ-Bnm">
-                                        <rect key="frame" x="0.0" y="790" width="400" height="60"/>
+                                        <rect key="frame" x="0.0" y="694" width="400" height="60"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tpr-B6-5AL" userLabel="No Button">
                                                 <rect key="frame" x="0.0" y="0.0" width="190" height="60"/>
@@ -106,14 +109,19 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="sTv-v5-nCR">
+                                <rect key="frame" x="210" y="468" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" name="YP Black"/>
                         <constraints>
                             <constraint firstItem="NS1-gZ-vV5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="2f8-ak-iZD"/>
+                            <constraint firstItem="sTv-v5-nCR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4xO-Ts-C9P"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="NS1-gZ-vV5" secondAttribute="bottom" id="9M4-bR-Z4Q"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="NS1-gZ-vV5" secondAttribute="trailing" constant="20" id="9RV-AG-gKu"/>
                             <constraint firstItem="NS1-gZ-vV5" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="Ia6-zC-p4U"/>
+                            <constraint firstItem="sTv-v5-nCR" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="OYl-zF-y5N"/>
                             <constraint firstItem="PDB-uy-WgT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="aK0-9f-0qW"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PDB-uy-WgT" secondAttribute="trailing" constant="20" id="aVm-e6-gGL"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ORJ-aM-q8n" secondAttribute="trailing" constant="20" id="g1F-ny-X3a"/>
@@ -121,6 +129,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="sTv-v5-nCR" id="eFt-7W-NtN"/>
                         <outlet property="counterLabel" destination="ffy-Fr-u7q" id="3jY-to-kf2"/>
                         <outlet property="imageView" destination="zgm-pN-mge" id="sQ3-ac-YiV"/>
                         <outlet property="noButton" destination="tpr-B6-5AL" id="nz3-eq-cZA"/>
