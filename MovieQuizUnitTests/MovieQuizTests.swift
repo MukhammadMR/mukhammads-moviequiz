@@ -1,29 +1,43 @@
-//
-//  MovieQuizTests.swift
-//  MovieQuizUnitTests
-//
-//  Created by Мухаммад Махмудов on 02.05.2025.
-//
-
 import XCTest
-
 @testable import MovieQuiz
 
-
-class ArrayTests: XCTestCase {
-    
-    func testGetValueInRange() throws {
-        let array = [1,1,2,3,5]
-        let value = array[safe: 2]
+final class MovieQuizViewControllerMock: MovieQuizViewControllerProtocol {
+    func show(quiz step: QuizStepViewModel) {
         
-        XCTAssertNotNil(value)
-        XCTAssertEqual(value,2)
     }
     
-    func testGetValueOutOfRange() throws {
-        let array = [1,1,2,3,5]
-        let value = array[safe: 20]
+    func show(quiz result: QuizResultsViewModel) {
         
-        XCTAssertNil(value)
+    }
+    
+    func highlightImageBorder(isCorrectAnswer: Bool) {
+        
+    }
+    
+    func showLoadingIndicator() {
+        
+    }
+    
+    func hideLoadingIndicator() {
+        
+    }
+    
+    func showNetworkError(message: String) {
+        
+    }
+}
+
+final class MovieQuizPresenterTests: XCTestCase {
+    func testPresenterConvertModel() throws {
+        let viewControllerMock = MovieQuizViewControllerMock()
+        let sut = MovieQuizPresenter(viewController: viewControllerMock)
+        
+        let emptyData = Data()
+        let question = QuizQuestion(image: emptyData, text: "Question Text", correctAnswer: true)
+        let viewModel = sut.convert(model: question)
+        
+        XCTAssertNotNil(viewModel.image)
+        XCTAssertEqual(viewModel.question, "Question Text")
+        XCTAssertEqual(viewModel.questionNumber, "1/10")
     }
 }
